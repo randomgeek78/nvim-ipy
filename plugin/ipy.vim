@@ -1,6 +1,7 @@
 command! -nargs=* IPython :call IPyConnect(<f-args>)
 command! -nargs=* IPython2 :call IPyConnect("--kernel", "python2")
 command! -nargs=* IJulia :call IPyConnect("--kernel", "julia-0.4")
+command! -nargs=+ IPyRun1 :call IPyRun(<q-args> . "\r")
 
 nnoremap <Plug>(IPy-Word) <Cmd>call IPyRun(expand("<cword>"))<cr>
 nnoremap <Plug>(IPy-Run) <Cmd>call IPyRun(getline('.')."\n")<cr>
